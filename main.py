@@ -24,7 +24,7 @@ print(df)
 
 # 4.4 (3 puntos) ¿Cuál es la peor película de acuerdo a los votos de todos los usuarios?
 dfvoteAvg = df.sort_values(by=['voteAvg'], ascending=True)
-dfvoteAvg.loc[:, ['title', 'voteAvg']].head(3)
+print(dfvoteAvg.loc[:, ['title', 'voteAvg']].head(3))
 
 # 4.5 ¿Cuántas  películas  se  hicieron  en  cada  año?  ¿En  qué  año  se  hicieron  más
 # películas? Haga un gráfico de barras
@@ -53,18 +53,18 @@ dfmainGenre.plot.pie(y='genC', figsize=(25, 25), labeldistance=None)
 dfmainRevenue = df.groupby('genres').agg(revenueSum=('revenue', 'sum'))
 dfmainRevenue = dfmainRevenue.sort_values(by=['revenueSum'], ascending=False)
 
-dfmainRevenue.head(5)
+print(dfmainRevenue.head(5))
 
 # 4.8 ¿La cantidad de actores influye en los ingresos de las películas?¿se han hecho
 # películas con más actores en los últimos años?
 dfmainRevenue = df.sort_values(by=['actorsAmount'], ascending=False)
-dfmainRevenue.loc[:, ['title', 'actorsAmount', 'releaseDate']].head(60)
+print(dfmainRevenue.loc[:, ['title', 'actorsAmount', 'releaseDate']].head(60))
 
 # 4.9 ¿Es posible que la cantidad de hombres y mujeres en el  reparto influya en la
 # popularidad y los ingresos de las películas?
 dfPopularity = df.sort_values(by=['popularity'], ascending=False)
-dfPopularity.loc[:, ['popularity', 'title', 'revenue',
-                     'castWomenAmount', 'castMenAmount']].head(20)
+print(dfPopularity.loc[:, ['popularity', 'title', 'revenue',
+                     'castWomenAmount', 'castMenAmount']].head(20))
 
 '''
 4.11. (8 puntos) ¿Cómo se correlacionan los presupuestos con los ingresos? ¿Los altos
